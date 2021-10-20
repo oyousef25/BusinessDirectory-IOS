@@ -8,37 +8,119 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Contacts View Controller-->
+        <!--My Contacts-->
         <scene sceneID="xRw-Ee-DZJ">
             <objects>
                 <viewController id="nOW-Eu-8Ml" customClass="ContactsViewController" customModule="BusinessDirectory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fbn-Cl-Hnq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="OxH-hs-PPC">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="contactCell" id="d5K-TT-8qR">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="d5K-TT-8qR" id="h8Q-Mc-IZv">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="hUr-p3-gJb" kind="show" id="xFG-Xg-Wpb"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Qgf-l8-QBP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OxH-hs-PPC" firstAttribute="leading" secondItem="Qgf-l8-QBP" secondAttribute="leading" id="3qw-Zk-bzH"/>
+                            <constraint firstItem="Qgf-l8-QBP" firstAttribute="bottom" secondItem="OxH-hs-PPC" secondAttribute="bottom" id="KrD-Md-3zc"/>
+                            <constraint firstItem="Qgf-l8-QBP" firstAttribute="trailing" secondItem="OxH-hs-PPC" secondAttribute="trailing" id="R1C-vx-OM0"/>
+                            <constraint firstItem="OxH-hs-PPC" firstAttribute="top" secondItem="Qgf-l8-QBP" secondAttribute="top" id="f5D-3M-3f4"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="SNC-EA-gLE"/>
+                    <navigationItem key="navigationItem" title="My Contacts" id="SNC-EA-gLE"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uQw-G7-jlq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1690" y="566"/>
         </scene>
         <!--View Controller-->
+        <scene sceneID="Wql-JH-ohN">
+            <objects>
+                <viewController id="hUr-p3-gJb" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="K2V-aX-Fv7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="DZa-Su-w1b"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="FQ7-S2-7i4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7eP-0d-LEm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2467" y="566"/>
+        </scene>
+        <!--Business Directory-->
         <scene sceneID="O4K-wB-W79">
             <objects>
                 <viewController id="9wZ-3H-iSl" customClass="ViewController" customModule="BusinessDirectory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e9G-CG-IOE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="EiF-Eo-EXE">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="businessDirectoryCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="businessCell" id="4kq-tE-Z12">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4kq-tE-Z12" id="jAb-fT-hVn">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Elt-kd-2B0" kind="show" id="xhe-VZ-Dyr"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="2dn-FQ-R0R"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="EiF-Eo-EXE" firstAttribute="top" secondItem="2dn-FQ-R0R" secondAttribute="top" id="CAz-06-P2J"/>
+                            <constraint firstItem="2dn-FQ-R0R" firstAttribute="trailing" secondItem="EiF-Eo-EXE" secondAttribute="trailing" id="KTC-ez-FlK"/>
+                            <constraint firstItem="EiF-Eo-EXE" firstAttribute="leading" secondItem="2dn-FQ-R0R" secondAttribute="leading" id="Oga-qI-fZa"/>
+                            <constraint firstItem="2dn-FQ-R0R" firstAttribute="bottom" secondItem="EiF-Eo-EXE" secondAttribute="bottom" id="gf3-2n-Ro4"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="KgJ-di-xPT"/>
+                    <navigationItem key="navigationItem" title="Business Directory" id="KgJ-di-xPT"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P5L-6T-OaD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1690" y="-105"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="B7T-QN-75b">
+            <objects>
+                <viewController id="Elt-kd-2B0" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="W8R-7W-TFG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="iWM-Xe-mJb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="5Oa-5P-VxK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S2g-FI-GZP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2467" y="-100"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="D1O-oc-70m">
