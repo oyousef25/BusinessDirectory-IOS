@@ -21,8 +21,12 @@ class BusinessTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func setUpCell(){
-        
+    /*
+        This method is used to set the values for the UI elements with the object's returned data
+     */
+    func setUpCell(using business: Business){
+        companyName.text = business.businessName
+        companyContact.text = "Company Contact: \(String(describing: business.companyHead))"
     }
 
 }

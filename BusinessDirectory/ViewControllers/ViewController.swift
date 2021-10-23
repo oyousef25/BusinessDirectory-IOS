@@ -18,42 +18,95 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        /*
+            Setting up the delegate and data source for the tableView
+         */
+        tableview.dataSource = self
     }
 }
 
 //MARK: Extensions
 
-//MARK: TableView Delegate
-extension ViewController: UITableViewDelegate{
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        //Find the cell that was clicked on by the user
-//        let selectedAlbum = albumResults[indexPath.row]
-//
-//        /*
-//            Create an alert controller to display the album name that was added to the cart
-//         */
-//        let ac = UIAlertController(title: "\(String(describing: selectedAlbum.collectionName!)) added to cart!", message: nil, preferredStyle: .alert)
-//
-//        ac.addAction(UIAlertAction(title: "OK", style: .default))
-//        present(ac, animated: true)
-//    }
-}
-
-
 //MARK: TableView Datasource
 extension ViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        if let url = createBusinessURL(){
+            fetchBusinesses(from: url)
+        } else{
+            print("Can't read URL")
+        }
+        return businessesResults.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "businessCell", for: indexPath) as! BusinessTableViewCell
 
-//        let business = albumResults[indexPath.row]
-//        cell.setUpCell(using: business)
+        let business = businessesResults[indexPath.row]
+        cell.setUpCell(using: business)
         
         return cell
+    }
+    
+    //MARK: API METHODS
+    /*
+        Function to create a valid URL
+     */
+    func createBusinessURL() -> URL?{
+        //Create the url string and return it
+        let urlString = "https://dtakaki.scweb.ca/mad510/testData.json"
+        print(urlString)
+        
+        
+        return URL(string: urlString)
+    }
+    
+    
+    /*
+        Fetch the Businesses from the API
+     */
+    func fetchBusinesses(from url: URL){
+        //Starting a new url session to fetch data from the JSON object thats returned by our URL
+        let businessTask = URLSession.shared.dataTask(with: url){
+            data, response, error in
+            
+            //Handling any errors and diplaying them
+            if let error = error {
+                print("There was an error fetching the data - \(error.localizedDescription)")
+            } else {
+                do {
+                    //Unwrapping using optional binding to make sure its not nil
+                    guard let someData = data else { return }
+                    
+                    /*
+                        Decoding the JSON data
+                     */
+                    let jsonDecoder = JSONDecoder()
+                    let downloadedResults = try jsonDecoder.decode(Businesses.self, from: someData)
+                    
+                    //Adding all the results to our businesses array
+                    self.businessesResults = downloadedResults.results
+                } catch let error {
+                    print("Problem decoding: \(error.localizedDescription)")
+                }
+                
+                //Reloading the tableview to display the new results
+                DispatchQueue.main.async {
+                    self.tableview.reloadData()
+                }
+            }
+        }
+        businessTask.resume()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //Pass the cell information to the details view controller
+        guard let destinationVC = segue.destination as? BusinessDetailsViewController, let indexPath = tableView.indexPathForSelectedRow else { return }
+        
+//        destinationVC.location = locations[indexPath.row]
+//        
+//        //set the nav title to the name of the camping site
+//        destinationVC.title = "\(locations[indexPath.row].title)"
     }
 }
 

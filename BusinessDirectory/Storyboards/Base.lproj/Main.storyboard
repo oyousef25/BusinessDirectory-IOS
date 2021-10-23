@@ -118,33 +118,34 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="EiF-Eo-EXE">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="businessDirectoryCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="businessCell" rowHeight="93" id="4kq-tE-Z12" customClass="BusinessTableViewCell" customModule="BusinessDirectory" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="93"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="businessDirectoryCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="businessCell" rowHeight="75" id="4kq-tE-Z12" customClass="BusinessTableViewCell" customModule="BusinessDirectory" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4kq-tE-Z12" id="jAb-fT-hVn">
-                                            <rect key="frame" x="0.0" y="0.0" width="384.5" height="93"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="384.5" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ntx-KW-Lum" userLabel="label">
-                                                    <rect key="frame" x="20" y="11" width="337" height="30"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                    <rect key="frame" x="20" y="11" width="337" height="23"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKf-Qc-W55" userLabel="label">
-                                                    <rect key="frame" x="20" y="43" width="337" height="20.5"/>
+                                                    <rect key="frame" x="20" y="36" width="337" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="CKf-Qc-W55" firstAttribute="top" secondItem="ntx-KW-Lum" secondAttribute="bottom" constant="2" id="RbU-5f-Seg"/>
-                                                <constraint firstItem="ntx-KW-Lum" firstAttribute="top" secondItem="jAb-fT-hVn" secondAttribute="topMargin" id="Rmt-t2-6cB"/>
-                                                <constraint firstItem="ntx-KW-Lum" firstAttribute="leading" secondItem="jAb-fT-hVn" secondAttribute="leadingMargin" id="UaS-vf-pGa"/>
-                                                <constraint firstItem="ntx-KW-Lum" firstAttribute="trailing" secondItem="CKf-Qc-W55" secondAttribute="trailing" id="ZyQ-Oj-1ya"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="ntx-KW-Lum" secondAttribute="trailing" constant="19.5" id="a1p-By-ENv"/>
-                                                <constraint firstItem="ntx-KW-Lum" firstAttribute="leading" secondItem="CKf-Qc-W55" secondAttribute="leading" id="s3b-I5-bhF"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ntx-KW-Lum" secondAttribute="trailing" constant="19.5" id="6Wa-EG-cBR"/>
+                                                <constraint firstItem="CKf-Qc-W55" firstAttribute="top" secondItem="ntx-KW-Lum" secondAttribute="bottom" constant="2" id="AmQ-UZ-PcF"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="CKf-Qc-W55" secondAttribute="bottom" constant="7.5" id="Qkb-hM-PT6"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="CKf-Qc-W55" secondAttribute="trailing" constant="19.5" id="VE2-xL-rpm"/>
+                                                <constraint firstItem="ntx-KW-Lum" firstAttribute="leading" secondItem="jAb-fT-hVn" secondAttribute="leadingMargin" id="hy0-26-Lw5"/>
+                                                <constraint firstItem="CKf-Qc-W55" firstAttribute="leading" secondItem="jAb-fT-hVn" secondAttribute="leadingMargin" id="qLy-i3-xz0"/>
+                                                <constraint firstItem="ntx-KW-Lum" firstAttribute="top" secondItem="jAb-fT-hVn" secondAttribute="topMargin" id="ymI-xE-S4B"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
