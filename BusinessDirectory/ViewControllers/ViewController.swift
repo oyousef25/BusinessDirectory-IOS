@@ -101,12 +101,9 @@ extension ViewController: UITableViewDataSource{
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //Pass the cell information to the details view controller
-        guard let destinationVC = segue.destination as? BusinessDetailsViewController, let indexPath = tableView.indexPathForSelectedRow else { return }
+        guard let destinationVC = segue.destination as? BusinessDetailsViewController, let indexPath = tableview.indexPathForSelectedRow else { return }
         
-//        destinationVC.location = locations[indexPath.row]
-//        
-//        //set the nav title to the name of the camping site
-//        destinationVC.title = "\(locations[indexPath.row].title)"
+        destinationVC.business = businessesResults[indexPath.row]
     }
 }
 

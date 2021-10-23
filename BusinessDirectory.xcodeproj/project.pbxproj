@@ -13,6 +13,7 @@
 		AB08BB8B27239F4C00387B49 /* BusinessTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08BB8A27239F4C00387B49 /* BusinessTableViewCell.swift */; };
 		AB08BB8D27239F6300387B49 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08BB8C27239F6300387B49 /* ContactTableViewCell.swift */; };
 		AB08BB8F2723A09700387B49 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08BB8E2723A09700387B49 /* Business.swift */; };
+		AB08BB912723B10200387B49 /* LocationPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08BB902723B10200387B49 /* LocationPin.swift */; };
 		AB6ECF6A271F7BC000BD41E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6ECF69271F7BC000BD41E3 /* AppDelegate.swift */; };
 		AB6ECF6C271F7BC000BD41E3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6ECF6B271F7BC000BD41E3 /* SceneDelegate.swift */; };
 		AB6ECF6E271F7BC000BD41E3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6ECF6D271F7BC000BD41E3 /* ViewController.swift */; };
@@ -49,6 +50,7 @@
 		AB08BB8A27239F4C00387B49 /* BusinessTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessTableViewCell.swift; sourceTree = "<group>"; };
 		AB08BB8C27239F6300387B49 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		AB08BB8E2723A09700387B49 /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
+		AB08BB902723B10200387B49 /* LocationPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPin.swift; sourceTree = "<group>"; };
 		AB6ECF66271F7BC000BD41E3 /* BusinessDirectory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusinessDirectory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB6ECF69271F7BC000BD41E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB6ECF6B271F7BC000BD41E3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				AB08BB8E2723A09700387B49 /* Business.swift */,
+				AB08BB902723B10200387B49 /* LocationPin.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				AB6ECF6E271F7BC000BD41E3 /* ViewController.swift in Sources */,
 				AB6ECF6A271F7BC000BD41E3 /* AppDelegate.swift in Sources */,
 				AB6ECF6C271F7BC000BD41E3 /* SceneDelegate.swift in Sources */,
+				AB08BB912723B10200387B49 /* LocationPin.swift in Sources */,
 				AB08BB8F2723A09700387B49 /* Business.swift in Sources */,
 				AB08BB822720ACEF00387B49 /* BusinessDetailsViewController.swift in Sources */,
 				AB08BB842720C36200387B49 /* ContactsDetailsViewController.swift in Sources */,

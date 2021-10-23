@@ -91,10 +91,10 @@
             </objects>
             <point key="canvasLocation" x="1689.8550724637682" y="565.17857142857144"/>
         </scene>
-        <!--View Controller-->
+        <!--Contacts Details View Controller-->
         <scene sceneID="Wql-JH-ohN">
             <objects>
-                <viewController id="hUr-p3-gJb" sceneMemberID="viewController">
+                <viewController id="hUr-p3-gJb" customClass="ContactsDetailsViewController" customModule="BusinessDirectory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="K2V-aX-Fv7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -176,10 +176,10 @@
             </objects>
             <point key="canvasLocation" x="1689.8550724637682" y="-105.13392857142857"/>
         </scene>
-        <!--View Controller-->
+        <!--Business Details View Controller-->
         <scene sceneID="B7T-QN-75b">
             <objects>
-                <viewController id="Elt-kd-2B0" sceneMemberID="viewController">
+                <viewController id="Elt-kd-2B0" customClass="BusinessDetailsViewController" customModule="BusinessDirectory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="W8R-7W-TFG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -215,7 +215,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2265545566" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mtt-eo-Tnb">
-                                <rect key="frame" x="20" y="636" width="102" height="21"/>
+                                <rect key="frame" x="20" y="636" width="374" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -224,6 +224,9 @@
                                 <rect key="frame" x="20" y="682" width="374" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Add To Contacts"/>
+                                <connections>
+                                    <action selector="saveButtonClicked:" destination="Elt-kd-2B0" eventType="touchUpInside" id="DGa-n2-syK"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iWM-Xe-mJb"/>
@@ -244,17 +247,23 @@
                             <constraint firstItem="xln-iH-1I1" firstAttribute="top" secondItem="kp7-6J-PbS" secondAttribute="bottom" constant="31" id="du9-nQ-7Qe"/>
                             <constraint firstItem="vhf-TF-7yI" firstAttribute="leading" secondItem="iWM-Xe-mJb" secondAttribute="leading" constant="20" id="f5x-nZ-qve"/>
                             <constraint firstItem="Mtt-eo-Tnb" firstAttribute="leading" secondItem="iWM-Xe-mJb" secondAttribute="leading" constant="20" id="gWn-vV-cAR"/>
+                            <constraint firstItem="iWM-Xe-mJb" firstAttribute="trailing" secondItem="Mtt-eo-Tnb" secondAttribute="trailing" constant="20" id="hSf-tA-cdJ"/>
                             <constraint firstItem="qA2-7D-1bV" firstAttribute="top" secondItem="FSx-pi-G4D" secondAttribute="bottom" constant="72" id="hlL-4T-mvl"/>
                             <constraint firstItem="iWM-Xe-mJb" firstAttribute="trailing" secondItem="xln-iH-1I1" secondAttribute="trailing" constant="333" id="lp6-Qf-bLw"/>
                             <constraint firstItem="LTc-VY-TLI" firstAttribute="leading" secondItem="iWM-Xe-mJb" secondAttribute="leading" constant="20" id="n90-1e-Z5e"/>
                             <constraint firstItem="iWM-Xe-mJb" firstAttribute="trailing" secondItem="LTc-VY-TLI" secondAttribute="trailing" constant="20" id="sNN-Nm-sOb"/>
                             <constraint firstItem="kp7-6J-PbS" firstAttribute="top" secondItem="LTc-VY-TLI" secondAttribute="bottom" constant="8" symbolic="YES" id="ueZ-6M-PpF"/>
                             <constraint firstItem="iWM-Xe-mJb" firstAttribute="trailing" secondItem="FSx-pi-G4D" secondAttribute="trailing" constant="20" id="vqv-qL-T0K"/>
-                            <constraint firstItem="iWM-Xe-mJb" firstAttribute="trailing" secondItem="Mtt-eo-Tnb" secondAttribute="trailing" constant="292" id="w5G-FL-k23"/>
                             <constraint firstItem="iWM-Xe-mJb" firstAttribute="trailing" secondItem="vhf-TF-7yI" secondAttribute="trailing" constant="20" id="wE9-95-KgL"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5Oa-5P-VxK"/>
+                    <connections>
+                        <outlet property="companyHead" destination="kp7-6J-PbS" id="wyd-gW-Hg4"/>
+                        <outlet property="companyName" destination="FSx-pi-G4D" id="HCp-RN-Sjx"/>
+                        <outlet property="contactNumber" destination="Mtt-eo-Tnb" id="dVe-TL-jyz"/>
+                        <outlet property="mapview" destination="qA2-7D-1bV" id="uP5-KW-L3O"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S2g-FI-GZP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
