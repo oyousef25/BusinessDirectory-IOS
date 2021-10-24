@@ -55,7 +55,19 @@ class BusinessDetailsViewController: UIViewController {
     
     //MARK: Actions
     @IBAction func saveButtonClicked(_ sender: Any) {
+        //Unwrapping the business to use its values in the dialog
+        guard let business = business else {
+            return
+        }
+
         
+        /*
+            Create an alert controller to display the album name that was added to the cart
+         */
+        let ac = UIAlertController(title: "Added!", message: "\(business.companyHead ?? "") has been added to your contacts", preferredStyle: .alert)
+        
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
     }
 
 }
