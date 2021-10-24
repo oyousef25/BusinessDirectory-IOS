@@ -26,7 +26,7 @@ class BusinessTableViewCell: UITableViewCell {
      */
     func setUpCell(using business: Business){
         companyName.text = business.businessName
-        companyContact.text = "Company Contact: \(String(describing: business.companyHead))"
+        companyContact.text = "Company Contact: \(business.companyHead ?? "")"
     }
 
 }
