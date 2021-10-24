@@ -28,5 +28,4 @@ class BusinessTableViewCell: UITableViewCell {
         companyName.text = business.businessName
         companyContact.text = "Company Contact: \(business.companyHead ?? "")"
     }
-
 }

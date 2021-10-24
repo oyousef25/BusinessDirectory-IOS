@@ -59,7 +59,7 @@ class BusinessDetailsViewController: UIViewController {
         guard let business = business else {
             return
         }
-
+        
         
         /*
             Create an alert controller to display the album name that was added to the cart
