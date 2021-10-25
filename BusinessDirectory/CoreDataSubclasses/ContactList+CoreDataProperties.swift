@@ -16,7 +16,7 @@ extension ContactList {
         return NSFetchRequest<ContactList>(entityName: "ContactList")
     }
 
-    @NSManaged public var companyHead: String?
+    @NSManaged public var companyName: String?
     @NSManaged public var contactId: Int32
     @NSManaged public var contactLatitude: Double
     @NSManaged public var contactLogo: String?

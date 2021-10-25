@@ -8,22 +8,21 @@
 import UIKit
 
 class ContactsDetailsViewController: UIViewController {
-
+    
+    //MARK: Properties
+    var contactList: ContactList?
+    
+    //MARK: Outlets
+    @IBOutlet weak var bussinesName: UILabel!
+    @IBOutlet weak var contactName: UILabel!
+    @IBOutlet weak var contactNumber: UILabel!
+    @IBOutlet weak var productsTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        bussinesName.text = contactList?.companyName
+        contactName.text = contactList?.contactName
+        contactNumber.text = contactList?.contactNumber
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

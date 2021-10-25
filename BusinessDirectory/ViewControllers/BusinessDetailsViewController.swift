@@ -10,7 +10,10 @@ import MapKit
 
 class BusinessDetailsViewController: UIViewController {
     //MARK: Properties
-    var business: Business?
+    //Core data stack that we are going to use to add the new business to the contactList
+    lazy var coreDataStack = CoreDataStack(modelName: "BusinessDirectory")
+        
+    var business: Business? //This is the passed business object that we are going to use
     
     
     //MARK: Outlets
@@ -60,6 +63,16 @@ class BusinessDetailsViewController: UIViewController {
             return
         }
         
+        //TODO: - Add to the list of contacts and save
+        let newContactList = ContactList(context: coreDataStack.managedContext)
+//        newTaskList.tasklistName = taskList
+        newContactList.contactName = business.companyHead
+        newContactList.companyName = business.businessName
+        newContactList.contactNumber = business.contactNumber
+        newContactList.contactLogo = business.companyLogo
+        //newContactList.contactProducts = business.products
+
+        coreDataStack.saveContext()
         
         /*
             Create an alert controller to display the album name that was added to the cart

@@ -9,9 +9,7 @@ import UIKit
 
 class ContactTableViewCell: UITableViewCell {
     @IBOutlet weak var businessImage: UIImageView!
-    
     @IBOutlet weak var businessHead: UILabel!
-    
     @IBOutlet weak var companyName: UILabel!
     
     override func awakeFromNib() {
@@ -25,15 +23,15 @@ class ContactTableViewCell: UITableViewCell {
     /*
         This method is used to set the values for the UI elements with the object's returned data
      */
-    func setUpCell(using business: Business){
-        businessHead.text = business.companyHead
-        companyName.text = business.businessName
+    func setUpCell(using business: ContactList){
+        businessHead.text = business.contactName
+        companyName.text = business.companyName
         
         //set a default image in case there is no poster
         businessImage.image = UIImage(named: "sample")
         
         //get the poster path string
-        guard let imagePath = business.companyLogo else { return }
+        guard let imagePath = business.contactLogo else { return }
         
         //build a url to fetch the album and load the image
         if let url = buildImageUrl(for: imagePath){

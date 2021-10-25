@@ -15,8 +15,8 @@
 		AB08BB8F2723A09700387B49 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08BB8E2723A09700387B49 /* Business.swift */; };
 		AB08BB912723B10200387B49 /* LocationPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08BB902723B10200387B49 /* LocationPin.swift */; };
 		AB08BBAA2725EE8600387B49 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08BBA92725EE8600387B49 /* CoreDataStack.swift */; };
-		AB08BBAD2725EEFC00387B49 /* ContactList+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08BBAB2725EEFC00387B49 /* ContactList+CoreDataClass.swift */; };
-		AB08BBAE2725EEFC00387B49 /* ContactList+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08BBAC2725EEFC00387B49 /* ContactList+CoreDataProperties.swift */; };
+		AB08BBB1272623A800387B49 /* ContactList+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08BBAF272623A800387B49 /* ContactList+CoreDataClass.swift */; };
+		AB08BBB2272623A800387B49 /* ContactList+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08BBB0272623A800387B49 /* ContactList+CoreDataProperties.swift */; };
 		AB6ECF6A271F7BC000BD41E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6ECF69271F7BC000BD41E3 /* AppDelegate.swift */; };
 		AB6ECF6C271F7BC000BD41E3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6ECF6B271F7BC000BD41E3 /* SceneDelegate.swift */; };
 		AB6ECF6E271F7BC000BD41E3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6ECF6D271F7BC000BD41E3 /* ViewController.swift */; };
@@ -55,8 +55,8 @@
 		AB08BB8E2723A09700387B49 /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		AB08BB902723B10200387B49 /* LocationPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPin.swift; sourceTree = "<group>"; };
 		AB08BBA92725EE8600387B49 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
-		AB08BBAB2725EEFC00387B49 /* ContactList+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContactList+CoreDataClass.swift"; sourceTree = "<group>"; };
-		AB08BBAC2725EEFC00387B49 /* ContactList+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContactList+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AB08BBAF272623A800387B49 /* ContactList+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContactList+CoreDataClass.swift"; sourceTree = "<group>"; };
+		AB08BBB0272623A800387B49 /* ContactList+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContactList+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		AB6ECF66271F7BC000BD41E3 /* BusinessDirectory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusinessDirectory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB6ECF69271F7BC000BD41E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB6ECF6B271F7BC000BD41E3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,8 +110,8 @@
 		AB08BBA72725EE4D00387B49 /* CoreDataSubclasses */ = {
 			isa = PBXGroup;
 			children = (
-				AB08BBAB2725EEFC00387B49 /* ContactList+CoreDataClass.swift */,
-				AB08BBAC2725EEFC00387B49 /* ContactList+CoreDataProperties.swift */,
+				AB08BBAF272623A800387B49 /* ContactList+CoreDataClass.swift */,
+				AB08BBB0272623A800387B49 /* ContactList+CoreDataProperties.swift */,
 			);
 			path = CoreDataSubclasses;
 			sourceTree = "<group>";
@@ -351,11 +351,11 @@
 				AB6ECF6A271F7BC000BD41E3 /* AppDelegate.swift in Sources */,
 				AB6ECF6C271F7BC000BD41E3 /* SceneDelegate.swift in Sources */,
 				AB08BBAA2725EE8600387B49 /* CoreDataStack.swift in Sources */,
-				AB08BBAD2725EEFC00387B49 /* ContactList+CoreDataClass.swift in Sources */,
+				AB08BBB1272623A800387B49 /* ContactList+CoreDataClass.swift in Sources */,
 				AB08BB912723B10200387B49 /* LocationPin.swift in Sources */,
 				AB08BB8F2723A09700387B49 /* Business.swift in Sources */,
 				AB08BB822720ACEF00387B49 /* BusinessDetailsViewController.swift in Sources */,
-				AB08BBAE2725EEFC00387B49 /* ContactList+CoreDataProperties.swift in Sources */,
+				AB08BBB2272623A800387B49 /* ContactList+CoreDataProperties.swift in Sources */,
 				AB08BB842720C36200387B49 /* ContactsDetailsViewController.swift in Sources */,
 				AB08BB8B27239F4C00387B49 /* BusinessTableViewCell.swift in Sources */,
 				AB08BB8D27239F6300387B49 /* ContactTableViewCell.swift in Sources */,
