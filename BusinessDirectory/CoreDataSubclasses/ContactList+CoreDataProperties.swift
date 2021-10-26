@@ -23,7 +23,7 @@ extension ContactList {
     @NSManaged public var contactLongitude: Double
     @NSManaged public var contactName: String?
     @NSManaged public var contactNumber: String?
-    @NSManaged public var contactProducts: String?
+    @NSManaged public var contactProducts: [String]?
 
 }
 

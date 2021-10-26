@@ -29,18 +29,18 @@ class ContactsViewController: UIViewController {
         } catch {
             print("There was an error fetching the taskLists: \(error.localizedDescription)")
         }
-        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fetchContactList()
-        //tableview.reloadData()
-
-        // Do any additional setup after loading the view.
-        
+        //Setting the data source for the tableview to use our data source methods in the extension.
         tableView.dataSource = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        fetchContactList()
+        tableView.reloadData()
     }
     
     //MARK: Navigation
@@ -66,5 +66,16 @@ extension ContactsViewController: UITableViewDataSource{
         cell.setUpCell(using: contactList)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let contact = contactList[indexPath.row]
+            coreDataStack.persistentContainer.viewContext.delete(contact)
+            contactList.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+
+            coreDataStack.saveContext()
+        }
     }
 }

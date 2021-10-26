@@ -36,6 +36,12 @@ extension ViewController: UITableViewDataSource{
         } else{
             print("Can't read URL")
         }
+        let sortedList:[Business] = businessesResults.sorted{
+                $0.businessName ?? "" < $1.businessName ?? ""
+        }
+        
+        self.businessesResults = sortedList
+        
         return businessesResults.count
     }
     
@@ -84,8 +90,9 @@ extension ViewController: UITableViewDataSource{
                     let jsonDecoder = JSONDecoder()
                     let downloadedResults = try jsonDecoder.decode(Businesses.self, from: someData)
                     
-                    //Adding all the results to our businesses array
+//                    //Adding all the results to our businesses array
                     self.businessesResults = downloadedResults.results
+                    
                 } catch let error {
                     print("Problem decoding: \(error.localizedDescription)")
                 }
