@@ -30,27 +30,39 @@ class ViewController: UIViewController {
 
 //MARK: TableView Datasource
 extension ViewController: UITableViewDataSource{
+    //This will tell the table =view about ho many rows it is supposed to return
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let url = createBusinessURL(){
+            //Fetching all businesses from the URL
             fetchBusinesses(from: url)
         } else{
             print("Can't read URL")
         }
+        
+        //Sorting our results
         let sortedList:[Business] = businessesResults.sorted{
                 $0.businessName ?? "businessName" < $1.businessName ?? "businessName"
         }
         
+        //Assigning our array to the sorted results
         self.businessesResults = sortedList
         
+        //Returning the size of our array
         return businessesResults.count
     }
     
+    //This will give the views in our cells the appropiriate values that were loaded from the api
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //Creating a new instance of our cell
         let cell = tableView.dequeueReusableCell(withIdentifier: "businessCell", for: indexPath) as! BusinessTableViewCell
 
+        //Locationg our current cell
         let business = businessesResults[indexPath.row]
+        
+        //Setting up the cell using our cell class methods
         cell.setUpCell(using: business)
         
+        //Returning our ready-to-go cell
         return cell
     }
     
@@ -59,11 +71,11 @@ extension ViewController: UITableViewDataSource{
         Function to create a valid URL
      */
     func createBusinessURL() -> URL?{
-        //Create the url string and return it
+        //We will use this url to fetch the JSON data
         let urlString = "https://dtakaki.scweb.ca/mad510/testData.json"
         print(urlString)
         
-        
+        //Returning our URL
         return URL(string: urlString)
     }
     
@@ -106,10 +118,12 @@ extension ViewController: UITableViewDataSource{
         businessTask.resume()
     }
     
+    //This method will allow us to pass whatever we need to the next view controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //Pass the cell information to the details view controller
+        //this will have the information about which cell we are navigating to
         guard let destinationVC = segue.destination as? BusinessDetailsViewController, let indexPath = tableview.indexPathForSelectedRow else { return }
         
+        //Passing the selected business object to the details controller
         destinationVC.business = businessesResults[indexPath.row]
     }
 }

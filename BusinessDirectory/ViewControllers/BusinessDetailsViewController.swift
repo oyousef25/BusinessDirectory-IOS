@@ -26,12 +26,17 @@ class BusinessDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //Unwrapping our passed business object
         if let business = business {
+            //Using the passed business object to set our UI elements to their correct values
             companyName.text = business.businessName
             companyHead.text = business.companyHead
             contactNumber.text = business.contactNumber
         }
         
+        /*
+         Styling our mapview
+         */
         mapview.layer.cornerRadius = 15
         mapview.isScrollEnabled = false
         mapview.isZoomEnabled = false
@@ -39,8 +44,9 @@ class BusinessDetailsViewController: UIViewController {
         centerOnPin()
     }
     
+    //MARK: Methods
+    //This method will add a pin to our mapview
     func centerOnPin(){
-        
         guard let business = business else{ return }
         guard let latitude = business.latitude, let longitude = business.longitude else { return }
                 
@@ -63,20 +69,21 @@ class BusinessDetailsViewController: UIViewController {
             return
         }
         
-        //TODO: - Add to the list of contacts and save
+        //Creating a new empty instance of the core data object
         let newContactList = ContactList(context: coreDataStack.managedContext)
-//        newTaskList.tasklistName = taskList
+        
+        //Setting it's vlues to whatever the seleted cell have
         newContactList.contactName = business.companyHead
         newContactList.companyName = business.businessName
         newContactList.contactNumber = business.contactNumber
         newContactList.contactLogo = business.companyLogo
-//        newContactList.contactProducts = business.products
         //newContactList.contactProducts = business.products
 
+        //Save the changes made to our core data
         coreDataStack.saveContext()
         
         /*
-            Create an alert controller to display the album name that was added to the cart
+            Create an alert controller to display the contact name that was added to contacts
          */
         let ac = UIAlertController(title: "Added!", message: "\(business.companyHead ?? "") has been added to your contacts", preferredStyle: .alert)
         
