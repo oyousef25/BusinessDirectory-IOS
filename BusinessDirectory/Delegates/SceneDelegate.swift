@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import CoreSpotlight
+import MobileCoreServices
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -50,6 +52,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
     }
 
+    func scene(_ scene: UIScene, continue userActivity: NSUserActivity){
+        //Tracking the user activity and what action type did the searchable item returns
+        if userActivity.activityType == CSSearchableItemActionType {
+           //When the user clicks on the spotlight search item send them to the main screen
+           if let navigationController = window?.rootViewController as? UINavigationController {
+               if let viewController = navigationController.topViewController as? ContactsViewController {
+                   viewController.fetchContactList()
+               }
+           }
+        }
+    }
 
 }
-

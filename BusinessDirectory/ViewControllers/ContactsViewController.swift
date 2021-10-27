@@ -41,7 +41,7 @@ class ContactsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Adding rounded corners to the cell view
+        //TODO: Adding rounded corners to the cell view
         
         
         //Setting the data source for the tableview to use our data source methods in the extension.

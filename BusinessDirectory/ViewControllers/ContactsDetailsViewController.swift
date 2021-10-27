@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import CoreSpotlight
+import MobileCoreServices
 
 class ContactsDetailsViewController: UIViewController, UNUserNotificationCenterDelegate {
     
@@ -36,6 +38,33 @@ class ContactsDetailsViewController: UIViewController, UNUserNotificationCenterD
         
         //Setting the data source for the products table view
         tableView.dataSource = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let userActivity = NSUserActivity(activityType: "ca.myscc.oy.coreSpotlight")
+        userActivity.isEligibleForSearch = true
+        userActivity.isEligibleForPublicIndexing = false
+        
+        guard let contact = contactList else{return}
+        
+        userActivity.title = contact.contactName
+        userActivity.keywords = ["hummus", "shawarma", "Mickey Mouse"]
+        
+        var attributeSet: CSSearchableItemAttributeSet{
+            let attributeSet = CSSearchableItemAttributeSet(itemContentType: kUTTypeData as String)
+            attributeSet.contentDescription = contact.companyName
+            attributeSet.phoneNumbers = [contact.contactNumber ?? "000 000 0000"]
+            //attributeSet.phoneNumbers = ["555 555 5555"]
+            attributeSet.supportsPhoneCall = true
+            
+            return attributeSet
+        }
+        
+        userActivity.contentAttributeSet = attributeSet
+        
+        self.userActivity = userActivity
+        self.userActivity?.becomeCurrent()
+        
     }
     
     //MARK: Methods
