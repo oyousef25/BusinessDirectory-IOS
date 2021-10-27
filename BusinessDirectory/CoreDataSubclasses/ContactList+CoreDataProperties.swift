@@ -2,7 +2,7 @@
 //  ContactList+CoreDataProperties.swift
 //  BusinessDirectory
 //
-//  Created by Omar Yousef on 2021-10-24.
+//  Created by Omar Yousef on 2021-10-27.
 //
 //
 
@@ -24,6 +24,24 @@ extension ContactList {
     @NSManaged public var contactName: String?
     @NSManaged public var contactNumber: String?
     @NSManaged public var contactProducts: String?
+    @NSManaged public var product: NSSet?
+
+}
+
+// MARK: Generated accessors for product
+extension ContactList {
+
+    @objc(addProductObject:)
+    @NSManaged public func addToProduct(_ value: Products)
+
+    @objc(removeProductObject:)
+    @NSManaged public func removeFromProduct(_ value: Products)
+
+    @objc(addProduct:)
+    @NSManaged public func addToProduct(_ values: NSSet)
+
+    @objc(removeProduct:)
+    @NSManaged public func removeFromProduct(_ values: NSSet)
 
 }
 

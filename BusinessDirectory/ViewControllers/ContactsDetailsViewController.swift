@@ -14,7 +14,7 @@ class ContactsDetailsViewController: UIViewController, UNUserNotificationCenterD
     //MARK: Properties
     var contactList: ContactList?
     
-    var products = [String]()
+    var products = [Products]()
     
     //MARK: Outlets
     //Our UI elemts on the page
@@ -41,6 +41,10 @@ class ContactsDetailsViewController: UIViewController, UNUserNotificationCenterD
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        guard let productSet = contactList?.product as? Set<Products> else{return}
+        products = Array(productSet)
+        
+        
         let userActivity = NSUserActivity(activityType: "ca.myscc.oy.coreSpotlight")
         userActivity.isEligibleForSearch = true
         userActivity.isEligibleForPublicIndexing = false
@@ -48,13 +52,15 @@ class ContactsDetailsViewController: UIViewController, UNUserNotificationCenterD
         guard let contact = contactList else{return}
         
         userActivity.title = contact.contactName
-        userActivity.keywords = ["hummus", "shawarma", "Mickey Mouse"]
+        userActivity.keywords = [getFirstWord(for: products[0].productName ?? "")]
         
         var attributeSet: CSSearchableItemAttributeSet{
             let attributeSet = CSSearchableItemAttributeSet(itemContentType: kUTTypeData as String)
-            attributeSet.contentDescription = contact.companyName
+            
+            //Joining the array of product into 1 string
+            //let joined = products.lazy.joined()(separator: " - ")
+            attributeSet.contentDescription = "\(String(describing: contact.companyName)) - "
             attributeSet.phoneNumbers = [contact.contactNumber ?? "000 000 0000"]
-            //attributeSet.phoneNumbers = ["555 555 5555"]
             attributeSet.supportsPhoneCall = true
             
             return attributeSet
@@ -86,6 +92,10 @@ class ContactsDetailsViewController: UIViewController, UNUserNotificationCenterD
             }
         }
     }
+    
+    func getFirstWord(for string: String) -> String {
+     return string.components(separatedBy: " ").first ?? " "
+     }
     
     //MARK: Actions
     /*
@@ -131,7 +141,7 @@ class ContactsDetailsViewController: UIViewController, UNUserNotificationCenterD
 extension ContactsDetailsViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        return contactList!.contactProducts!.count
-        return 5
+        return products.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -139,9 +149,9 @@ extension ContactsDetailsViewController: UITableViewDataSource{
 
 //        let contactList = products[indexPath.row]
 //
-//        cell.textLabel?.text = contactList
-        
+        //cell.textLabel?.text = products[indexPath.row]
         cell.textLabel?.text = "hummus"
+        //cell.textLabel?.text = "hummus"
         cell.imageView?.image = UIImage(systemName: "\(indexPath.row + 1).square")
 
         return cell
