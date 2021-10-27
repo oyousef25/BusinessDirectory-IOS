@@ -70,7 +70,7 @@ class BusinessDetailsViewController: UIViewController {
         newContactList.companyName = business.businessName
         newContactList.contactNumber = business.contactNumber
         newContactList.contactLogo = business.companyLogo
-        newContactList.contactProducts = business.products
+//        newContactList.contactProducts = business.products
         //newContactList.contactProducts = business.products
 
         coreDataStack.saveContext()

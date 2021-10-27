@@ -37,7 +37,7 @@ extension ViewController: UITableViewDataSource{
             print("Can't read URL")
         }
         let sortedList:[Business] = businessesResults.sorted{
-                $0.businessName ?? "" < $1.businessName ?? ""
+                $0.businessName ?? "businessName" < $1.businessName ?? "businessName"
         }
         
         self.businessesResults = sortedList
