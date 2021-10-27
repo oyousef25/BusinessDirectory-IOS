@@ -14,7 +14,7 @@ class ContactsDetailsViewController: UIViewController, UNUserNotificationCenterD
     //MARK: Properties
     var contactList: ContactList?
     
-    var products = [Products]()
+    //var products = [Products]()
     
     //MARK: Outlets
     //Our UI elemts on the page
@@ -41,8 +41,8 @@ class ContactsDetailsViewController: UIViewController, UNUserNotificationCenterD
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        guard let productSet = contactList?.product as? Set<Products> else{return}
-        products = Array(productSet)
+        //guard let productSet = contactList?.product as? Set<Products> else{return}
+        //products = Array(productSet)
         
         
         let userActivity = NSUserActivity(activityType: "ca.myscc.oy.coreSpotlight")
@@ -52,7 +52,7 @@ class ContactsDetailsViewController: UIViewController, UNUserNotificationCenterD
         guard let contact = contactList else{return}
         
         userActivity.title = contact.contactName
-        userActivity.keywords = [getFirstWord(for: products[0].productName ?? "")]
+        userActivity.keywords = [getFirstWord(for: contact.contactName ?? "")]
         
         var attributeSet: CSSearchableItemAttributeSet{
             let attributeSet = CSSearchableItemAttributeSet(itemContentType: kUTTypeData as String)
@@ -140,8 +140,9 @@ class ContactsDetailsViewController: UIViewController, UNUserNotificationCenterD
 //MARK: TableView Datasource
 extension ContactsDetailsViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return contactList!.contactProducts!.count
-        return products.count
+        //return contactList!.product.count
+        //return products.count
+        return 5
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -150,7 +151,7 @@ extension ContactsDetailsViewController: UITableViewDataSource{
 //        let contactList = products[indexPath.row]
 //
         //cell.textLabel?.text = products[indexPath.row]
-        cell.textLabel?.text = "hummus"
+        cell.textLabel?.text = "sample"
         //cell.textLabel?.text = "hummus"
         cell.imageView?.image = UIImage(systemName: "\(indexPath.row + 1).square")
 
